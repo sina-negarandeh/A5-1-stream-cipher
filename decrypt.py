@@ -18,7 +18,7 @@ def read_plain_file(file_name):
                 plain_text.append(byte) 
             return plain_text
     except IOError:
-            print('Error While Opening the file!')
+            print("file could not be opened")
 
 def decrypt(file_name, stream_cipher):
     decrypted_text = []
