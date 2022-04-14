@@ -6,12 +6,12 @@ class Validator:
     def validate_session_key_characters(session_key):
         session_key_characters = set(session_key)
         if session_key_characters != ALLOWED_CHARACTERS:
-            raise Exception("session key should be made up of characters 0 and 1")
+            raise Exception("error: session key should be made up of characters 0 and 1")
 
     @staticmethod
     def validate_session_key_size(session_key):
         if len(session_key) != SESSION_KEY_LENGHT:
-            raise Exception("session key should be 64 bits")
+            raise Exception(f"error: session key should be {SESSION_KEY_LENGHT} bits")
 
     @staticmethod
     def validate_session_key(session_key):
