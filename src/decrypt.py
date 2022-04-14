@@ -18,7 +18,7 @@ def read_plain_file(file_name):
                 plain_text.append(byte) 
             return plain_text
     except IOError:
-            print("file could not be opened")
+            print("error: file could not be opened")
 
 def decrypt(file_name, stream_cipher):
     decrypted_text = []
@@ -40,4 +40,7 @@ def decrypt_file():
             decrypt(file_name, stream_cipher)
 
 if __name__ == "__main__":
-    decrypt_file()
+    try:
+        decrypt_file()
+    except Exception as exception:
+        print(exception)

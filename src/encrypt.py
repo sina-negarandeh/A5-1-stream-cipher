@@ -16,7 +16,7 @@ def read_plain_file(file_name):
                 plain_text.append(byte) 
             return plain_text
     except IOError:
-            print("file could not be opened")
+            print("error: file could not be opened")
 
 def encrypt(file_name, stream_cipher):
     encrypted_text = []
@@ -38,4 +38,7 @@ def encrypt_file():
             encrypt(file_name, stream_cipher)
 
 if __name__ == "__main__":
-    encrypt_file()
+    try:
+        encrypt_file()
+    except Exception as exception:
+        print(exception)
